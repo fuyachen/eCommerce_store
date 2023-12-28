@@ -4,12 +4,14 @@ import IconButton from "./IconButton";
 import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "./Currency";
 import { useRouter } from "next/navigation";
+import useCart from "@/hooks/useCart";
 
 const ProductCard = ({ data: product }) => {
   const router = useRouter();
   const handleClick = () => {
     router.push(`/product/${product?.id}`);
   };
+  const { addItem } = useCart();
   return (
     <div
       className="group cursor-pointer rounded-xl border p-3 space-y-4"
@@ -30,7 +32,10 @@ const ProductCard = ({ data: product }) => {
               icon={<Expand size={20} className="text-black" />}
             />
             <IconButton
-              onClick={() => {}}
+              onClick={(e) => {
+                e.stopPropagation();
+                addItem(product);
+              }}
               icon={<ShoppingCart size={20} className="text-black" />}
             />
           </div>
