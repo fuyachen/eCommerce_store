@@ -1,6 +1,12 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-const Button = ({ className, children, disabled, type = "button" }) => {
+const Button = ({
+  className,
+  children,
+  disabled,
+  type = "button",
+  ...props
+}) => {
   return (
     <button
       className={cn(
@@ -9,10 +15,11 @@ const Button = ({ className, children, disabled, type = "button" }) => {
       )}
       disabled={disabled}
       type={type}
+      {...props}
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

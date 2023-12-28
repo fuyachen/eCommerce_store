@@ -10,7 +10,6 @@ const ProductCard = ({ data: product }) => {
   const handleClick = () => {
     router.push(`/product/${product?.id}`);
   };
-
   return (
     <div
       className="group cursor-pointer rounded-xl border p-3 space-y-4"
@@ -28,11 +27,11 @@ const ProductCard = ({ data: product }) => {
           <div className="flex justify-end gap-x-6">
             <IconButton
               onClick={() => {}}
-              icon={<Expand size={20} className="text-gray-200" />}
+              icon={<Expand size={20} className="text-black" />}
             />
             <IconButton
               onClick={() => {}}
-              icon={<ShoppingCart size={20} className="text-gray-200" />}
+              icon={<ShoppingCart size={20} className="text-black" />}
             />
           </div>
         </div>
@@ -40,7 +39,7 @@ const ProductCard = ({ data: product }) => {
       </div>
       <div>
         <p className=" font-semibold text-lg">{product?.name}</p>
-        <p className="text-gray-500 text-md">{product?.category.name}</p>
+        <p className="text-gray-500 text-md">{product?.category?.name}</p>
       </div>
       {/* price */}
       <Currency value={product?.price} />

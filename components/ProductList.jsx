@@ -1,6 +1,6 @@
-import ProductCard from "./ui/ProductCard"
+import ProductCard from "./ui/ProductCard";
 
-const ProductList = ({data:products}) => {
+const ProductList = ({ data: products }) => {
   return (
     <>
       <div>
@@ -11,8 +11,8 @@ const ProductList = ({data:products}) => {
           <ProductCard key={product.id} data={product} />
         ))}
       </div>
-      </>
-  )
-}
+    </>
+  );
+};
 
-export default ProductList
+export default ProductList;
