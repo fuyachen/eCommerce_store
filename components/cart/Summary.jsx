@@ -16,8 +16,8 @@ const Summary = () => {
 
   useEffect(() => {
     if (searchParams.get("success")) {
-      toast.success("Payment completed.");
       removeAll();
+      toast.success("Payment completed.");
     }
 
     if (searchParams.get("canceled")) {

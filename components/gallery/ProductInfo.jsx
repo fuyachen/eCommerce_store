@@ -1,8 +1,14 @@
-import { cn, formatter } from "@/lib//utils";
-import Button from "@/components//ui/Button";
-import { ShoppingBagIcon, ShoppingCart } from "lucide-react";
+"use client";
 
-const ProductInfo = ({ data: { name, price, color } }) => {
+import { formatter } from "@/lib//utils";
+import Button from "@/components//ui/Button";
+import { ShoppingCart } from "lucide-react";
+import useCart from "@/hooks/useCart";
+
+const ProductInfo = ({ data }) => {
+  const { name, price, color } = data;
+  const cart = useCart();
+
   return (
     <div className="flex flex-col gap-4">
       <h2 className="font-semibold text-2xl">{name}</h2>
@@ -22,7 +28,12 @@ const ProductInfo = ({ data: { name, price, color } }) => {
           style={{ backgroundColor: color.value }}
         ></div>
       </div>
-      <Button className="flex gap-4 px-8 w-fit mt-4">
+      <Button
+        className="flex gap-4 px-8 w-fit mt-4"
+        onClick={() => {
+          cart.addItem(data);
+        }}
+      >
         <span>Add to cart</span>
         <ShoppingCart size={20} color="white" />
       </Button>
