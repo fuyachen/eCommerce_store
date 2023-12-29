@@ -19,7 +19,9 @@ export default function RootLayout({ children }) {
           <ToastProvider />
           <div className="mx-auto max-w-7xl">
             <Nav />
-            <div className="p-4 sm:p-6 lg:p-8 ">{children}</div>
+            <div className="p-4 sm:p-6 lg:p-8 min-h-[calc(100vh-18rem)]">
+              {children}
+            </div>
             <Footer />
           </div>
         </body>
