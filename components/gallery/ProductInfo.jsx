@@ -1,7 +1,7 @@
 "use client";
 
 import { formatter } from "@/lib//utils";
-import Button from "@/components//ui/Button";
+import Button from "@/components/ui/Button";
 import { ShoppingCart } from "lucide-react";
 import useCart from "@/hooks/useCart";
 

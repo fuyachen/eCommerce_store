@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 import { X } from "lucide-react";
 
 import IconButton from "@/components/ui/IconButton";
-import Currency from "@/components/ui/currency";
+import Currency from "@/components/ui/Currency";
 import useCart from "@/hooks/useCart";
 
 const CartItem = ({ data }) => {
